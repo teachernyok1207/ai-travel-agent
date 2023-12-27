@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+
+<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="index.css">
+	<title>Nyoknyok AI Travel Agent</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<main>
+		<div class="front-screen" id="frontScreen">
+			<img src="/assets/AI_Travel_Agent.png" alt="AI Travel Agent Logo" class="front-screen--logo">
+			<button class="front-screen--button" id="lets-begin">Let's Begin</button>
+		</div>
+		
+		<form class="booking-screen" id="bookingScreen">
+			<div class="booking-screen--numbers">
+				<h2 class="booking-screen--labels">
+					Number of travellers
+				</h2>
+				
+				<div class="booking-screen--qty">
+					<div class="booking-screen--qty-button" id="minus-button">
+						-
+					</div>
+					<h6 class="booking-screen--amount" id="number-of-travellers">1</h6>
+					<div class="booking-screen--qty-button" id="plus-button">
+						+
+					</div>
+				</div>
+			</div>
+			
+			<div class="booking-screen--destination">
+				<h2 class="booking-screen--labels">
+					Flying from
+				</h2>
+				<input type="text" class="booking-screen-inputs" id="flying-from" placeholder="Manila City" required>
+				<h2 class="booking-screen--labels">
+					Flying to
+				</h2>
+				<input type="text" class="booking-screen-inputs" id="flying-to" placeholder="New York City" required>
+			</div>
+			
+			<div class="booking-screen--date">
+				<h2 class="booking-screen--labels">
+					From Date
+				</h2>
+				<input type="date" class="booking-screen--dtpicker" id="from-date" required>
+				<h2 class="booking-screen--labels">
+					To Date
+				</h2>
+				<input type="date" class="booking-screen--dtpicker" id="to-date" required>
+			</div>
+			
+			<div class="booking-screen--budget">
+				<h2 class="booking-screen--labels">
+					Budget
+				</h2>
+				<input type="number" class="booking-screen--value" id="budget" min="1" value="1" required>
+			</div>
+			
+			<div class="booking-screen--button">
+				<button class="booking-screen--plan-button" type="submit" id="plan-my-trip">Plan my Trip!</button>
+			</div>
+		</form>
+		
+		<div class="loading-screen" id="loadingScreen">
+			<img src="/assets/Loading-AI-Travel-Agent.gif" alt="Pre-Loading Screen" class="loading-screen-image">
+		</div>
+		
+		<div class="result-screen" id="resultScreen">
+			<h1 class="result-screen--title">
+				Your Trip
+			</h1>
+			
+			<div class="result-screen--date">
+				<div class="result-screen--dates" id="result-from-date">
+					→ 25th Nov 23
+				</div>	
+				<div class="result-screen--dates" id="result-to-date">
+					5th Dec 23 ←
+				</div>	
+			</div>
+			
+			<div class="result-screen--destination">
+				<div class="result-screen--destination-input" id="result-destination">
+					New York City → Paris
+				</div>
+			</div>
+			
+			<div class="result-screen--div">
+				<h2 class="result-screen--labels">Weather</h2>
+				<div class="result-screen--displays" id="result-weather">
+					You can expect the weather to be quite mild. Low will be 19° and high will be 25°
+				</div>
+			</div>
+			
+			<div class="result-screen--div">
+				<h2 class="result-screen--labels">Flights</h2>
+				<div class="result-screen--displays" id="result-flight">
+					The best option for you is with Delta Airlines with a layover in Oslo
+					<button class="result-screen--book-button">Book</button>
+				</div>
+			</div>
+			
+			<div class="result-screen--div">
+				<h2 class="result-screen--labels">Hotel</h2>
+				<div class="result-screen--displays" id="result-hotel">
+					We recommend you stay at the Premiere Inn hotel in central Paris
+					<button class="result-screen--book-button">Book</button>
+				</div>
+			</div>
+			
+			<div class="result-screen--div">
+				<h2 class="result-screen--labels">Activities</h2>
+				<div class="result-screen--displays" id="result-activities">
+					I recommend a lot of activities from visiting Meiji Shrine, having a dine with Tsukiji Fish Market Tour, and Shopping in Harajuku.
+				</div>
+			</div>
+			
+			<button class="result-screen--button" id="result-restart">Try Again</button>
+		</div>
+	</main>
+	
+	<script type="module" src="index.js"></script>
+</body>
+
+</html>
