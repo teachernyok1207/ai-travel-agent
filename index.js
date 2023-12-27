@@ -98,44 +98,16 @@ planMyTrip.addEventListener("click",async function(e){
     }
 })
 
-// Declare message
-const weatherMessages = [
-    {
-        role: "system",
-        content: `
-            You are a helpful AI Travel Agent. The highest and lowest temperature and the weather condition of the locations are now provided. All you have to do is to construct a short paragraph about the weather condition of the destination. Provide your shortest answer around 1-3 sentence only.
-        `
-    }
-]
-
-const flightMessages = [
-    {
-        role: "system",
-        content: `
-            You are a helpful AI Travel Agent. The user will be giving two locations which is the origin and the destination. As well as the flight dates which is the date from, date to, and the budget of the traveller. All you have to do is to suggest the name of the airline that is suitable for the scheduled flights and how to transport from the origin to the destinations as well as their budgets. Provide your shortest answer around 1-3 sentence only. 
-        `
-    }
-]
-
-const hotelMessages = [
-    {
-        role: "system",
-        content: `
-            You are a helpful AI Travel Agent. Provide the your suggested hotel accommodation based on the destination, the budget, the number of the travelers. Provide your shortest answer around 1-3 sentence only. 
-        `
-    }
-]
-
-const activityMessages = [
-    {
-        role: "system",
-        content: `
-            You are a helpful AI Travel Agent. The user will provide all the details that you may need like the weather conditions, number of travelers, dates, destinations, and budgets. All you need to do is to provide 2-3 activities that are suitable to all their inputs such as food trips, museum visits, outdoor adventures etc. 
-        `
-    }
-]
-
 async function constructWeatherFromAI(weather){
+    const weatherMessages = [
+        {
+            role: "system",
+            content: `
+                You are a helpful AI Travel Agent. The highest and lowest temperature and the weather condition of the locations are now provided. All you have to do is to construct a short paragraph about the weather condition of the destination. Provide your shortest answer around 1-3 sentence only.
+            `
+        }
+    ]
+
     weatherMessages.push(
         {
             role: "user",
@@ -154,6 +126,15 @@ async function constructWeatherFromAI(weather){
 }
 
 async function constructFlightFromAI(){
+    const flightMessages = [
+        {
+            role: "system",
+            content: `
+                You are a helpful AI Travel Agent. The user will be giving two locations which is the origin and the destination. As well as the flight dates which is the date from, date to, and the budget of the traveller. All you have to do is to suggest the name of the airline that is suitable for the scheduled flights and how to transport from the origin to the destinations as well as their budgets. Provide your shortest answer around 1-3 sentence only. 
+            `
+        }
+    ]
+
     flightMessages.push(
         {
             role: "user",
@@ -171,6 +152,15 @@ async function constructFlightFromAI(){
 }
 
 async function constructAccommodationFromAI(){
+    const hotelMessages = [
+        {
+            role: "system",
+            content: `
+                You are a helpful AI Travel Agent. Provide the your suggested hotel accommodation based on the destination, the budget, the number of the travelers. Provide your shortest answer around 1-3 sentence only. 
+            `
+        }
+    ]
+
     hotelMessages.push(
         {
             role: "user",
@@ -188,6 +178,15 @@ async function constructAccommodationFromAI(){
 }
 
 async function constructActivitiesFromAI(weather){
+    const activityMessages = [
+        {
+            role: "system",
+            content: `
+                You are a helpful AI Travel Agent. The user will provide all the details that you may need like the weather conditions, number of travelers, dates, destinations, and budgets. All you need to do is to provide 2-3 activities that are suitable to all their inputs such as food trips, museum visits, outdoor adventures etc. 
+            `
+        }
+    ]
+
     activityMessages.push(
         {
             role: "user",
